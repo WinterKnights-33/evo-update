@@ -16,8 +16,8 @@ def log():
 
 @app.route('/register', methods=['POST'])
 def register():
-    if not User.validate_register(request.form):
-        return redirect('/')
+#    if not User.validate_reg(request.form):
+#        return redirect('/')
     data = {
         "first_name": request.form["first_name"],
         "last_name": request.form["last_name"],

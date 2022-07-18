@@ -1,18 +1,13 @@
 
 
-const pass_register = document.querySelector(".pass_reg");
-const showLogin = document.querySelector(".showLog");
-
-showLogin.addEventListener("click", function() {
-    if(pass_register.type === "register") {
-        pass_register.type = "text";
-        showLogin.textContent = "HIDE";
-    } else {
-        pass_register.type = "login";
-        showLogin.textContent = "SHOW";
+function next(){
+    document.getElementById('log').style.display = "none";
+    document.getElementById('regis').style.display = "block";
     }
-});
-
+    function prev(){
+    document.getElementById('regis').style.display = "none";
+    document.getElementById('log').style.display = "block";
+    }
 
 
 

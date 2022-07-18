@@ -24,6 +24,13 @@
     background: rgba(red, green, blue, alpha);
 }
 
+#log {
+    display: block;
+}
+#regis {
+    display: none;
+}
+
 .content-register, .content-login {
     border-radius: 10px;
     position: absolute;
@@ -40,11 +47,12 @@
     box-shadow: 0 0 6px 0 rgba(29, 29, 29, 0.203);
 }
 
-.content header {
+.content-register, .content-login header {
     color: rgb(232, 120, 7);
-    font-size: 33px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 900;
     margin: 0 0 35px 0;
+    text-shadow: 3px 10px 10px #dbaa2f;
     font-family: 'Courier New', 'Montserrat', Courier, monospace;
 }
 
@@ -137,4 +145,31 @@ i span {
     font-family: "Poppins", sans-serif;
 }
 
+.registerBtn, .LoginBtn, .nextBtn, .prevBtn {
+    background-color: #c53c0e;
+    border-radius: 100px;
+    box-shadow: rgb(251, 217, 48) 0 -25px 18px -14px inset,rgba(251, 217, 48) 0 1px 2px,rgba(251, 217, 48) 0 2px 4px,rgb(225, 192, 24) 0 4px 8px,rgb(206, 173, 8) 0 8px 16px,rgb(238, 207, 48) 0 16px 32px;
+    color: rgb(128, 38, 0);
+    cursor: pointer;
+    display: inline-block;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    padding: 7px 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
 
+.registerBtn:hover, .LoginBtn:hover, .nextBtn:hover, .prevBtn:hover {
+
+    box-shadow: rgba(240, 120, 7, 0.768) 0 -25px 18px -14px inset,rgba(210, 103, 3, 0.991) 0 1px 2px,rgba(240, 135, 7, 0.923) 0 2px 4px,rgba(255, 139, 31, 0.768) 0 4px 8px,rgba(194, 97, 0, 0.93) 0 8px 16px,rgba(240, 120, 7, 0.768) 0 16px 32px;
+    transform: scale(1.05) rotate(-2.25deg);
+}
+
+a, .LoginBtn, .registerBtn {
+    margin-top: 20px;
+}
