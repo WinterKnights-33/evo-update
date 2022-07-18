@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/homepage.css')}}"/>
+    <title>Dashboard</title>
+</head>
+<body>
+    <section class="layout">
+        <div class="header">
+            <h2>Welcome {{user.first_name}}</h2>
+            <div class="head-btn">
+                <a href="/apex/addNew" class="addNew-btn">Try A New Diet!</a>
+                <a href="/logout" class="logout-btn">Logout</a>
+            </div>
+        </div>
+        <div class="leftSide">
+            <div>
+                Add image1 here
+            </div>
+        </div>
+        <div class="body">
+            <table class="user">
+                <thaed>
+                    {% for apex in apexes %}
+                    <tr>
+                        <th>
+                            <td>
+                                <a href="/apex/view/{{apex.id}}">{{apex.experiment_no}}</a>
+                            </td>
+                            <td>
+                                Archaeologist in Training: {{user.first_name}}
+                            </td>
+                            <td>
+                                {% if apex.user_id == session.user_id %}
+                                <a href="/apex/delete/{{apex.id}}">The Fossil Turned to Dust!</a>
+                                <a href="/apex/edit/{{painting.id}}">Take A Closer Look!</a>
+                                {% endif %}
+                            </td>
+                        </th>
+                    </tr>
+                    {% endfor %}
+                </thaed>
+            </table>
+        </div>
+        <div class="rightSide">
+            <div>
+                Add image2 here
+            </div>
+        </div>
+        <div class="footer">5</div>
+    </section>
+
+
+    <script type="text/javascript" src="{{url_for('static',filename='js/script.js')}}"></script>
+</body>
+</html>

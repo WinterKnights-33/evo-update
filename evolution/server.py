@@ -1,9 +1,6 @@
-
-
 from flask_app import app
 
 from flask_app.controllers.apexes import app
-
 from flask_app.controllers.users import app
 
 
