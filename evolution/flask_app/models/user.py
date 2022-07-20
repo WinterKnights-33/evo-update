@@ -1,5 +1,6 @@
 
 
+from unittest import result
 from flask_app.config.mysqlconnection import connectToMySQL
 
 import re
@@ -13,19 +14,18 @@ class User:
     def __init__(self,data):
         self.id = data['id']
         self.first_name = data['first_name']
-        self.last_name = data['last_name']
         self.email = data['email']
         self.password = data['password']
         
 
     @classmethod
     def save(cls,data):
-        query = "INSERT INTO users ( first_name, last_name, email, password ) VALUES ( %(first_name)s, %(last_name)s, %(email)s, %(password)s );"
+        query = "INSERT INTO users ( first_name, email, password ) VALUES ( %(first_name)s, %(email)s, %(password)s );"
         return connectToMySQL(cls.db).query_db(query,data)
     
     @classmethod
     def update(cls,data):
-        query = "UPDATE users SET first_name=%(first_name)s,last_name=%(last_name)s,email=%(email)s,updated_at=NOW() WHERE id = %(id)s;"
+        query = "UPDATE users SET first_name=%(first_name)s,email=%(email)s,updated_at=NOW() WHERE id = %(id)s;"
         return connectToMySQL('users_schema').query_db(query,data)
 
     @classmethod
@@ -47,9 +47,13 @@ class User:
     def get_w_email(cls,data):
         query = "SELECT * FROM users WHERE email = %(email)s;"
         results = connectToMySQL(cls.db).query_db(query,data)
+        print(results)
         if len(results) < 1:
             return False
         return cls(results[0])
+
+
+
 
 #    @staticmethod
 #    def validate_reg(user):
@@ -74,4 +78,3 @@ class User:
 #        if user['password'] != user['confirm']:
 #            flash("Passwords must match", 'register')
 #        return is_valid
-

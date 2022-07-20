@@ -20,27 +20,28 @@ def register():
 #        return redirect('/')
     data = {
         "first_name": request.form["first_name"],
-        "last_name": request.form["last_name"],
+#       "last_name": request.form["last_name"],
         "email": request.form["email"],
         "password": bcrypt.generate_password_hash(request.form["password"])
     }
     id = User.save(data)
-    session["user.id"] = id
+    session["user_id"] = id
     session["name"] = request.form["first_name"]
     return redirect("/home")
 
-@app.route("/login", methods=["POST"])
+@app.route('/login',methods=['POST'])
 def login():
     user = User.get_w_email(request.form)
+
     if not user:
+        flash("Invalid Informaion")
+        return redirect('/')
+    if not bcrypt.check_password_hash(user.password, request.form['password']):
         flash("Invalid Information")
-        return redirect("/")
-    if not bcrypt.check_password_hash(user.password, request.form["password"]):
-        flash("Invalid Information")
-        return redirect("/")
-    session["user_id"] = user.id
-    session["name"] = user.first_name
-    return redirect("/home")
+        return redirect('/')
+    session['user_id'] = user.id
+    session['name'] = user.first_name
+    return redirect('/home')
 
 @app.route("/logout")
 def logout():

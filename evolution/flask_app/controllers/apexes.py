@@ -14,7 +14,7 @@ def home():
         'id': session['user_id']
     }
     #print (session["user_id"])
-    return render_template("homepage.html", user=User.get_w_id(data), apexes=Apex.get_all_t())
+    return render_template("homepage.html", user=User.get_w_id(data), apexes=Apex.get_all_types())
 
 
 @app.route('/apex/speculation/<int:id>')
@@ -22,7 +22,7 @@ def view(id):
     data = {
         'id': id
     }
-    return render_template("speculation.html", apex=Apex.get_one_t(data))
+    return render_template("speculation.html", apex=Apex.get_one_type(data))
 
 
 @app.route('/apex/edit/<int:id>')
@@ -32,7 +32,7 @@ def edit(id):
     data = {
         'id': id
     }
-    return render_template("edit.html", apex=Apex.get_one_t(data))
+    return render_template("edit.html", apex=Apex.get_one_type(data))
 
 
 @app.route('/addNew/apex/update/<int:id>', methods=['POST'])
