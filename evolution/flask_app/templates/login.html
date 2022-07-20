@@ -82,3 +82,94 @@
     
 </body>
 </html>
+
+
+<!--
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}"/>
+    <title>Register/Login</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <form action="/register" method="post" class="">
+            <h1 class="">Register</h1>
+            <div class="warning">
+                {% with messages = get_flashed_messages (category_filter=['register']) %}
+                {% if messages %}
+                <div class="" role="alert">
+                    <strong>Flash Message</strong>
+                        {% for message in messages %}
+                        <p>{{message}}</p>
+                        <button class="wB" onclick="accept()">Ok..</button>
+                        {% endfor %}
+                </div>
+                {% endif %}
+                {% endwith %}
+            </div>
+            <div class="intro">
+                <h2>Welcome Archaeologist!!</h2>
+                <p>Evolution is a fun concept to play with, isnt it?  Well today, you found this site for your chance to have a go at a few “what if” situations that may come to pass.  With the new Diets taking place, food restrictions most hold and with no promises of what will remain to sustain out society in the future.  Do you wonder how we would change?  How we would look to those future Archaeologist in the extra distant future?  If youve ever wondered this in your life, youve come to the right place.  Lets explore these “what if” situations now.</p>
+                <button class="intro-button" onclick="accept()">LETS GO!</button>
+            </div>
+            <div class="register">
+                <label for="first_name">
+                    First Name:
+                    <input type="text" name="first_name">
+                </label>
+                <label for="last_name">
+                    Last Name:
+                    <input type="text" name="last_name">
+                </label>
+                <label for="email" >
+                    Email:
+                    <input type="email" name="email">
+                </label>
+                <label for="password" >
+                    Password:
+                    <input type="password" name="password">
+                </label>
+                <label for="confirm" >
+                    Confirm Password:
+                    <input type="password" name="confirm">
+                </label>
+                <p><button class="regB">Register</button></p>
+            </form>
+        </div>
+        <div class="login">
+            <form action="/login" method="post" class="">
+                <h2 class="">Login</h2>
+                <div class="warning">
+                    {% with messages = get_flashed_messages (category_filter=['login']) %}
+                    {% if messages %}
+                    <div class="" role="alert">
+                        <strong>Flash Message</strong>
+                        {% for message in messages %}
+                        <p>{{message}}</p>
+                        {% endfor %}
+                        <button class="wB" onclick="accept()">Ok..</button>
+                    </div>
+                    {% endif %}
+                    {% endwith %}
+                </div>
+                <div class="log">
+                    <label for="email">Email:</label>
+                    <p><input type="text" name="email"></p>
+                    <label for="password">Password:</label>
+                    <p><input type="password" name="password"></p>
+                </div>
+                <button class="logB" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+    
+
+</body>
+</html>
+-->
