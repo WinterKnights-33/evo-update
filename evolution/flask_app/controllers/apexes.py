@@ -72,3 +72,7 @@ def save():
     Apex.save(data)
     return redirect('/home')
 
+@app.route('/apex/addNew')
+def addNew():
+    return render_template('addNew.html', apex=Apex)
+

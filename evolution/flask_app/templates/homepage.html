@@ -22,14 +22,13 @@
             </div>
         </div>
         <div class="body">
-            hereasdfwegbrhjy
             <table class="user">
                 <thaed>
                     {% for apex in apexes %}
                     <tr>
                         <th>
                             <td>
-                                <a href="/apex/view/{{apex.id}}">{{apex.experiment_no}}</a>
+                                <a href="/apex/speculation/{{apex.id}}">{{apex.experiment_no}}</a>
                             </td>
                             <td>
                                 Archaeologist in Training: {{user.first_name}}
@@ -37,7 +36,7 @@
                             <td>
                                 {% if apex.user_id == session.user_id %}
                                 <a href="/apex/delete/{{apex.id}}">The Fossil Turned to Dust!</a>
-                                <a href="/apex/edit/{{painting.id}}">Take A Closer Look!</a>
+                                <a href="/apex/edit/{{apex.id}}">Take A Closer Look!</a>
                                 {% endif %}
                             </td>
                         </th>

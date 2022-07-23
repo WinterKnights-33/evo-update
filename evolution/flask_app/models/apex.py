@@ -66,7 +66,7 @@ class Apex:
         return connectToMySQL('DIET DIAGRAM').query_db(query, data)
     
     @classmethod
-    def report(cls, data):
+    def addNew(cls, data):
         query = "UPDATE apexes SET experiment_no = %(experiment_no)s, description = %(description)s, WHERE id = %(id)s;"
         return connectToMySQL('DIET DIAGRAM').query_db(query, data)
 

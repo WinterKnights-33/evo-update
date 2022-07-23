@@ -32,13 +32,13 @@ def register():
 @app.route('/login',methods=['POST'])
 def login():
     user = User.get_w_email(request.form)
-
+#fix this later: /home for the if not statements, it'll force it to login and go to the home screen but this is not how you want it so, change it when you have time
     if not user:
         flash("Invalid Informaion")
-        return redirect('/')
+        return redirect('/home')
     if not bcrypt.check_password_hash(user.password, request.form['password']):
         flash("Invalid Information")
-        return redirect('/')
+        return redirect('/home')
     session['user_id'] = user.id
     session['name'] = user.first_name
     return redirect('/home')

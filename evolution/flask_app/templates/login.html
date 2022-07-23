@@ -40,7 +40,7 @@
                         <input type="password" class="pass-key" required placeholder="Confirm Password" />
                         <span class="show">SHOW</span>
                     </div>
-                    <p></p>
+                    <p>
                         <button name="firstnext" class="registerBtn">Register</button>
                     </p>
                     <a class="prevBtn" onclick="prev()" >You have an account already? Login Here</a>
@@ -62,8 +62,13 @@
                     {% endif %}
                     {% endwith %}
                 </div>
+                <!--
                 <div class="feild space">
                         <input type="email" class="pass-key" required placeholder="Email" for="email" />
+                </div>
+                -->
+                <div class="feild space">
+                    <input type="email" class="pass-key" for="email" required placeholder="Email" name="email">
                 </div>
                 <div class="feild space">
                     <span class="da da-lock"></span>
